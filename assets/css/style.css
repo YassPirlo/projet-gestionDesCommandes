@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+}
+
+header {
+    background-color: #009246; /* vert italien */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #CE2B37; /* rouge italien */
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #ffeb99;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border: 3px solid #009246;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #009246; /* vert */
+    border-bottom: 2px solid #CE2B37; /* rouge */
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: #CE2B37; /* rouge */
+}
+
+/* Listes du menu et du panier */
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+    margin-bottom: 5px;
+    border-left: 4px solid #009246;
+}
+
+/* Formulaire */
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #009246;
+    outline: none;
+}
+
+form label {
+    font-weight: bold;
+    color: #009246;
+}
+
+/* Boutons */
+button {
+    background-color: #CE2B37; /* rouge italien */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #a01f29;
+}
+
+footer {
+    background-color: #009246; /* vert italien */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-top: 5px solid #CE2B37; /* rouge italien */
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}

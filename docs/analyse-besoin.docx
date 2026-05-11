@@ -1,0 +1,26 @@
+1. Contexte du projet
+
+Le nom du restaurant est Pizzeria EAFC. Mon objectif est créer une application web pour les étudiants commandent en ligne et l'admin gère le menu?
+
+2. Fonctionnalités principales
+    - client : voir le menu, choisir ses plats, voir le total+livraison
+    - admin : ajouter/modifier/supp des plats (crud)
+    - Gesstion dse catégories : soft/pizza/desserts
+
+3. Pages du projet
+    - PageAccueil.html
+    - plats.html
+    - commandes.html
+    - ajouter.html
+
+4. Technologies utilisées
+    - HTML/CSS/Js 
+    - PHP/mysql
+    - Api JSON     
+
+5.livrables TP1
+    Pages HTML/CSS
+    Nav fonctionnelle
+    Design responsive
+
+
