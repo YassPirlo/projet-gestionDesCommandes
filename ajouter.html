@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria EAFC - Ajouter un plat</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
+    
+</head>
+<body>
+
+    <header>
+        <h1>Pizzeria EAFC</h1>
+        <nav>
+            <a href="pageAccueil.html">Accueil</a>
+            <a href="plats.html">Menu</a>
+            <a href="commandes.html">Commander</a>
+            <a href="ajouter.html">Ajouter</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Ajouter un plat (Admin)</h2>
+
+        <form>
+            <p>
+                <label for="nom">Nom du plat :</label><br>
+                <input type="text" id="nom" name="nom" required>
+                <div class ="error-message" id="nom-error"></div>
+            </p>
+
+            <p>
+                <label for="categorie">Catégorie :</label><br>
+                <select id="categorie" name="categorie">
+                    <option value="boissons">Boissons</option>
+                    <option value="pizzas">Pizzas</option>
+                    <option value="desserts">Desserts</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="prix">Prix (€) :</label><br>
+                <input type="number" id="prix" name="prix" step="0.01" min="0" required>
+            </p>
+
+            <p>
+                <label for="image">Image (URL) :</label><br>
+                <input type="text" id="image" name="image">
+            </p>
+
+            <p>
+                <label for="description">Description :</label><br>
+                <textarea id="description" name="description" rows="4"></textarea>
+            </p>
+
+            <button type="submit">Ajouter le plat</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pizzeria EAFC - À bientôt !</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
