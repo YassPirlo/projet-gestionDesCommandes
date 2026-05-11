@@ -23,18 +23,4 @@ Le nom du restaurant est Pizzeria EAFC. Mon objectif est créer une application 
     Nav fonctionnelle
     Design responsive
 
-6. Arborescence du projet 
-
-projet-gestionDesCommandes/
-├── pageAccueil.html
-├── plats.html
-├── commandes.html
-├── ajouter.html
-├── assets/
-│   ├── css/style.css
-│   ├── js/script.js
-│   └── images/pizza.jpg
-├── docs/
-│   └── analyse-besoin.docx
-└── README.md
 
