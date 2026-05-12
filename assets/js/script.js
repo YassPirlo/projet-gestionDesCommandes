@@ -1,4 +1,4 @@
-// Marque le lien actif dans la navigation selon la page courante
+// Marque le lien actif dans la navigation
 document.addEventListener('DOMContentLoaded', () => {
   const currentPage = window.location.pathname.split('/').pop();
   document.querySelectorAll('nav a').forEach(link => {
@@ -8,45 +8,44 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Spans d'erreur
 let nomErreur = document.getElementById('nom-erreur');
 let prixErreur = document.getElementById('prix-erreur');
 let submitErreur = document.getElementById('form-erreur');
 
- function validationNom(){
-    let name = document.getElementById('nom').value;
+function validationNom() {
+  let name = document.getElementById('nom').value;
 
-    if (name.length == 0){
-            nomErreur.innerHTML = "le nom est obligatoire";
-            return false
-    }
-    if (!name.match(/^[A-Za-zÀ-ÿ0-9\s'-]{2,50}$/)) {
-      nomErreur.innerHTML = "Ecrire un nom correct"
-      return false
-      }
-
-    nomErreur.innerHTML='';
-    return true;
- }
-
-
-function validationPrix(){
-  let prix=document.getElementById('prix');
-
-  if (prix.value > 100){
-    prixErreur.innerHTML = "Prix trop élevé";
-    return false;
-
-  }
-  prixErreur.innerHTML="";
-  return true; 
-
-}
-
-function validateForm(){
-  if(!validationNom() ||!validationPrix() ) {
-    submitErreur.innerHTML = "corriger l'erreur pour envoyer le formulaire";
-    setTimeout(function(){submitErreur.style.display='none';},3000);
+  if (name.length < 2) {
+    nomErreur.innerHTML = "Le nom doit faire au moins 2 caractères";
     return false;
   }
+
+  nomErreur.innerHTML = "";
+  return true;
 }
 
+function validationPrix() {
+  let prix = document.getElementById('prix').value;
+
+  if (prix <= 0) {
+    prixErreur.innerHTML = "Le prix doit être supérieur à 0";
+    return false;
+  }
+  if (prix > 100) {
+    prixErreur.innerHTML = "Prix trop élevé (max 100€)";
+    return false;
+  }
+
+  prixErreur.innerHTML = "";
+  return true;
+}
+
+function validateForm() {
+  if (!validationNom() || !validationPrix()) {
+    submitErreur.innerHTML = "Corriger les erreurs";
+    return false;
+  }
+  submitErreur.innerHTML = "";
+  return true;
+}
