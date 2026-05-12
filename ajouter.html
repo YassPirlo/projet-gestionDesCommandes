@@ -24,7 +24,8 @@
         <form>
             <p>
                 <label for="nom">Nom du plat :</label><br>
-                <input type="text" id="nom" name="nom" required>
+                <input type="text" id="nom" name="nom" required onkeyup="validationNom()">
+                <span id="nom-erreur"></span>
             </p>
 
             <p>
@@ -38,7 +39,9 @@
 
             <p>
                 <label for="prix">Prix (€) :</label><br>
-                <input type="number" id="prix" name="prix" step="0.01" min="0" required>
+                <input type="number" id="prix" name="prix" step="0.01" min="1" max="100" required onkeyup="validationPrix()">
+                <span id="prix-erreur"></span>
+
             </p>
 
             <p>
@@ -51,7 +54,9 @@
                 <textarea id="description" name="description" rows="4"></textarea>
             </p>
 
-            <button type="submit">Ajouter le plat</button>
+            <button onclick="return validateForm()" type="submit">Ajouter le plat</button>
+            <span id="form-erreur"></span>
+            
         </form>
     </main>
 
