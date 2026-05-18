@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "nom": "Margherita",
+    "description": "pizza classique avec sauce tomate, mozzarella et basilic",
+    "prix": 12.99,
+    "categorie": "pizza"
+  },
+  {
+    "id": 2,
+    "nom": "Coca-cola",
+    "description": "Boisson gazeuse sucrée",
+    "prix": 1.99,
+    "categorie": "boisson"
+  },
+  {
+    "id": 3,
+    "nom": "Napolitaine",
+    "description": "pizza avec sauce tomate, mozzarella, anchois et olives",
+    "prix": 14.99,
+    "categorie": "pizza"
+  },
+  
+  {
+    "id": 4,
+    "nom": "Tiramisu",
+    "description": "dessert italien à base de biscuits imbibés de café, de mascarpone et de cacao",
+    "prix": 6.99,
+    "categorie": "dessert"
+  } ,
+  
+  {
+    "id": 5,
+    "nom": "Fanta",
+    "description": "Boisson gazeuse sucrée à l'orange",
+    "prix": 1.99,
+    "categorie": "boisson"
+  },
+
+  {
+    "id": 6,
+    "nom": "Quattro Formaggi",
+    "description": "pizza avec sauce tomate et quatre types de fromage : mozzarella, gorgonzola, parmesan et ricotta",
+    "prix": 15.99,
+    "categorie": "pizza"
+  }
+]

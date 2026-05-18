@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('nav a').forEach(link => {
     if (link.getAttribute('href') === currentPage) {
       link.classList.add('active');
+  
     }
   });
+  chargerProduits();
 });
 
 // Spans d'erreur
@@ -48,4 +50,59 @@ function validateForm() {
   }
   submitErreur.innerHTML = "";
   return true;
+}
+
+class Produit {
+  constructor(nom,prix,categorie,description){
+    this.nom = nom;
+    this.prix = prix;
+    this.categorie = categorie;
+    this.description = description;
+  }
+  getNom(){
+    return this.nom;
+  }
+  getPrix(){
+    return this.prix;
+  }   
+  getCategorie(){
+    return this.categorie;
+  }
+  getDescription(){
+    return this.description;
+  } 
+  setNom(nom){
+    this.nom = nom;
+  }
+  setPrix(prix){
+    this.prix = prix;
+  }   
+  setCategorie(categorie){
+    this.categorie = categorie;
+  }
+  setDescription(description){
+    this.description = description;
+  }
+
+afficheInfo(){
+  return `Produit: ${this.nom}, Prix: ${this.prix}€, Catégorie: ${this.categorie}, Description: ${this.description}`;
+}
+
+}
+
+let catalogueProduits = [];
+
+async function ajouterProduit() {
+  try {
+    const reponse = await fetch('produits.json');
+    const produitsJson = await reponse.json();
+
+    catalogueProduits = produitsJson.map(item => {
+      return new Produit(item.nom, item.prix, item.categorie, item.description);
+    });
+    console.log("Les produits ont été ajoutés au catalogue :", catalogueProduits);
+    console.log(catalogueProduits[0].afficheInfo());
+  } catch (error) {
+    console.error("Erreur lors du chargement des produits :", error);
+  }
 }
