@@ -120,16 +120,18 @@ footer {
     border-top: 5px solid #CE2B37; /* rouge italien */
 }
 
-@media (max-width: 600px) {
-    nav a {
-        display: block;
-        margin: 5px 0;
-    }
-}
+
 
 #form-erreur {
     display: block;
     margin-top: 10px;
     color: red;
     font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
 }
