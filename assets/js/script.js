@@ -4,10 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('nav a').forEach(link => {
     if (link.getAttribute('href') === currentPage) {
       link.classList.add('active');
-  
     }
+    
   });
-  chargerProduits();
+const container = document.getElementById('produits-container');
+if (container) {
+  ajouterProduit().then(() => {
+    afficherProduits();
+  });
+}
 });
 
 // Spans d'erreur
@@ -45,11 +50,12 @@ function validationPrix() {
 
 function validateForm() {
   if (!validationNom() || !validationPrix()) {
-    submitErreur.innerHTML = "Corriger les erreurs";
-    return false;
+  Swal.fire('Erreur', 'Veuillez corriger les erreurs dans le formulaire avant de soumettre.', 'error');
+  return false;
   }
-  submitErreur.innerHTML = "";
-  return true;
+  Swal.fire('Succès', 'Produit ajouté avec succès !', 'success');
+  return false;
+
 }
 
 class Produit {
@@ -94,7 +100,7 @@ let catalogueProduits = [];
 
 async function ajouterProduit() {
   try {
-    const reponse = await fetch('produits.json');
+    const reponse = await fetch('assets/data/produits.json');
     const produitsJson = await reponse.json();
 
     catalogueProduits = produitsJson.map(item => {
@@ -106,3 +112,48 @@ async function ajouterProduit() {
     console.error("Erreur lors du chargement des produits :", error);
   }
 }
+
+function afficherProduits() {
+  const container = document.getElementById('produits-container');
+  container.innerHTML = '';
+
+  catalogueProduits.forEach(produit => {
+    const produitDiv = document.createElement('div');
+    produitDiv.classList.add('produit');
+
+    produitDiv.innerHTML = `
+      <h3>${produit.getNom()}</h3>
+      <p>Prix: ${produit.getPrix()}€</p>
+      <p>Catégorie: ${produit.getCategorie()}</p>
+      <p>Description: ${produit.getDescription()}</p>
+    `;
+
+    container.appendChild(produitDiv);
+  });
+}
+
+function filtrerProduits(categorie) {
+  if (categorie === 'tous') {
+    afficherProduits();
+    return;
+  }else {
+    const produitsFiltres = catalogueProduits.filter(produit => produit.getCategorie() === categorie);
+    const container = document.getElementById('produits-container');
+    container.innerHTML = '';
+
+    produitsFiltres.forEach(produit => {
+      const produitDiv = document.createElement('div');
+      produitDiv.classList.add('produit');
+
+      produitDiv.innerHTML = `
+        <h3>${produit.getNom()}</h3>
+        <p>Prix: ${produit.getPrix()}€</p>
+        <p>Catégorie: ${produit.getCategorie()}</p>
+        <p>Description: ${produit.getDescription()}</p>
+      `;
+
+      container.appendChild(produitDiv);
+    });
+  }
+}
+
