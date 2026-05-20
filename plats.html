@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizzeria EAFC - Menu</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -19,32 +20,15 @@
     </header>
 
     <main>
-        <h2>Notre Carte</h2>
+        <h2>Notre Menu</h2>
+        <div id="filtres">
+        <button onclick="filtrerProduits('tous')">Tous</button>
+        <button onclick="filtrerProduits('pizza')">Pizzas</button>
+        <button onclick="filtrerProduits('boisson')">Boissons</button>
+        <button onclick="filtrerProduits('dessert')">Desserts</button>
+        </div>
 
-        <h3>Boissons</h3>
-        <ul class="menu">
-            <li><span>Eau plate</span> <span>2 €</span></li>
-            <li><span>Coca-Cola</span> <span>3,5 €</span></li>
-            <li><span>Fanta</span> <span>3,5 €</span></li>
-            <li><span>Sprite</span> <span>3,5 €</span></li>
-            <li><span>Thé glacé pêche</span> <span>3,5 €</span></li>
-        </ul>
-
-        <h3>Pizzas</h3>
-        <ul class="menu">
-            <li><span>Margherita</span> <span>10 €</span></li>
-            <li><span>Regina</span> <span>12 €</span></li>
-            <li><span>4 Fromages</span> <span>13 €</span></li>
-            <li><span>Calzone</span> <span>13 €</span></li>
-            <li><span>Pepperoni</span> <span>12 €</span></li>
-        </ul>
-
-        <h3>Desserts</h3>
-        <ul class="menu">
-            <li><span>Tiramisu</span> <span>6 €</span></li>
-            <li><span>Panna Cotta</span> <span>5 €</span></li>
-            <li><span>Glace 2 boules</span> <span>4 €</span></li>
-        </ul>
+    <div id="produits-container" class="menu"></div>
     </main>
 
     <footer>
