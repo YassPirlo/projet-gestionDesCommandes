@@ -54,7 +54,7 @@ function validateForm() {
   return false;
   }
   Swal.fire('Succès', 'Produit ajouté avec succès !', 'success');
-  return false;
+  return true;
 
 }
 
@@ -100,7 +100,7 @@ let catalogueProduits = [];
 
 async function ajouterProduit() {
   try {
-    const reponse = await fetch('assets/data/produits.json');
+    const reponse = await fetch('api_produits.php');
     const produitsJson = await reponse.json();
 
     catalogueProduits = produitsJson.map(item => {
