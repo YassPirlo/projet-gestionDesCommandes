@@ -113,6 +113,9 @@ async function ajouterProduit() {
   }
 }
 
+afficherProduits();
+document.getElementById("btnActualiser").addEventListener("click", ajouterProduit);
+
 function afficherProduits() {
   const container = document.getElementById('produits-container');
   container.innerHTML = '';
@@ -155,5 +158,6 @@ function filtrerProduits(categorie) {
       container.appendChild(produitDiv);
     });
   }
+  aj
 }
 

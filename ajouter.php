@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="plats.html">Menu</a>
             <a href="commandes.html">Commander</a>
             <a href="produits.php">Produits (BD)</a>
-            <a href="ajouter.php">Admin</a>
+            <a href="ajouter.php">Ajouter</a>
         </nav>
     </header>
 
